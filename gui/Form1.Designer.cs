@@ -31,6 +31,9 @@
         private System.Windows.Forms.Button makeRealButton;
         private System.Windows.Forms.Button deleteScheduledJobButton;
         private System.Windows.Forms.ImageList imageList;
+        private ProgressBar progressBar;
+        private Label statusLabel;
+
 
         private void InitializeComponent()
         {
@@ -64,6 +67,11 @@
             deleteScheduledJobButton = new Button();
             selectPrinterButton = new Button();
             refreshCalendarButton = new Button();
+
+            // Add ProgressBar and Label initialization here
+            progressBar = new ProgressBar();
+            statusLabel = new Label();
+
             weeklyCalendarGridView.CellClick += WeeklyCalendarGridView_CellClick;
             tabControl.SuspendLayout();
             tabPage1.SuspendLayout();
@@ -71,6 +79,7 @@
             tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)weeklyCalendarGridView).BeginInit();
             SuspendLayout();
+
             // 
             // tabControl
             // 
@@ -97,6 +106,11 @@
             tabPage1.Controls.Add(deleteFolderButton);
             tabPage1.Controls.Add(selectPrintFilesPrinterButton);
             tabPage1.Controls.Add(makeRealButton);
+
+            // Add ProgressBar and Label to tabPage1
+            tabPage1.Controls.Add(progressBar);
+            tabPage1.Controls.Add(statusLabel);
+
             tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
@@ -104,6 +118,7 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Print Files";
             tabPage1.UseVisualStyleBackColor = true;
+
             // 
             // folderListView
             // 
@@ -224,6 +239,22 @@
             makeRealButton.Text = "Make Real";
             makeRealButton.UseVisualStyleBackColor = true;
             makeRealButton.Click += MakeRealButton_Click;
+            // 
+            // progressBar
+            // 
+            progressBar.Location = new Point(8, 500);
+            progressBar.Name = "progressBar";
+            progressBar.Size = new Size(1132, 23);
+            progressBar.TabIndex = 10;
+            // 
+            // statusLabel
+            // 
+            statusLabel.AutoSize = true;
+            statusLabel.Location = new Point(8, 530);
+            statusLabel.Name = "statusLabel";
+            statusLabel.Size = new Size(0, 15);
+            statusLabel.TabIndex = 11;
+
             // 
             // tabPage2
             // 
@@ -412,5 +443,6 @@
             ((System.ComponentModel.ISupportInitialize)weeklyCalendarGridView).EndInit();
             ResumeLayout(false);
         }
+
     }
 }
